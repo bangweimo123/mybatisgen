@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!-- 配置mysql 驱动jar包路径.用了绝对路径 -->
+	<classPathEntry location="${user.driver.location}" />
+	<context id="mygenerator" targetRuntime="com.dianping.cip.mybatisgen.generator.DPIntrospectedTableMyBatis3Impl">
+		<property name="mergeable" value="false" />
+		<plugin type="com.dianping.cip.mybatisgen.generator.plugins.PaginationPlugin" />
+		<plugin type="org.mybatis.generator.plugins.SqlMapConfigPlugin">
+			<property name="targetPackage" value="${user.sqlmap.config.location.package}" />
+			<property name="targetProject" value="${user.target.project.location}/${user.target.resources.project}" />
+		</plugin>
+		<plugin type="com.dianping.cip.mybatisgen.generator.plugins.ExampleWhereClausePlugin">
+		</plugin>
+		<plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin">
+		</plugin>
+		<plugin type="com.dianping.cip.mybatisgen.generator.plugins.SerializablePlugin">
+		</plugin>
+		<plugin type="com.dianping.cip.mybatisgen.generator.plugins.BatchInsertPlugin">
+			<property name="exampleAlias" value="${user.rename.example.alias}" />
+		</plugin>
+		<plugin type="com.dianping.cip.mybatisgen.generator.plugins.SelectOneByConditionSinglePlugin">
+			<property name="exampleAlias" value="${user.rename.example.alias}" />
+		</plugin>
+		<plugin type="com.dianping.cip.mybatisgen.generator.plugins.RenameMethodNamePlugin">
+			<property name="exampleAlias" value="${user.rename.example.alias}" />
+			<property name="pkAlias" value="${user.rename.pk.alias}" />
+		</plugin>
+		<!-- 为了防止生成的代码中有很多注释，比较难看，加入下面的配置控制 -->
+		<commentGenerator type="com.dianping.cip.mybatisgen.generator.CNCommentGenerator">
+			<property name="suppressAllComments" value="false" />
+			<property name="suppressDate" value="true" />
+			<property name="user.name" value="${user.name}" />
+		</commentGenerator>
+		<!-- 数据库连接 -->
+		<jdbcConnection driverClass="${jdbc.driver}" connectionURL="${jdbc.url}/${jdbc.schema}" userId="${jdbc.username}" password="${jdbc.password}">
+		</jdbcConnection>
+
+		<javaTypeResolver type="com.dianping.cip.mybatisgen.generator.JavaTypeResolverPluginImpl">
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- 数据表对应的model 层 -->
+		<javaModelGenerator targetPackage="${user.javamodel.location.package}" targetProject="${user.target.project.location}/${user.target.code.project}">
+			<property name="enableSubPackages" value="true" />
+		</javaModelGenerator>
+		<!-- sql mapper 隐射配置文件 -->
+		<sqlMapGenerator targetPackage="${user.sqlmap.location.package}" targetProject="${user.target.project.location}/${user.target.resources.project}">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- 在ibatis2 中是dao层，但在mybatis3中，其实就是mapper接口 -->
+		<javaClientGenerator type="XMLMAPPER" targetPackage="${user.dao.location.package}" targetProject="${user.target.project.location}/${user.target.code.project}">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<!-- 要对那些数据表进行生成操作，必须要有一个. -->
+		<table schema="${jdbc.schema}" tableName="${user.table.name0}" domainObjectName="${user.table.name0.alias}">
+			<!-- 去掉sqlmap中的schema， 在oracle中，如果配置了schema，此项一定要为true -->
+			<property name="ignoreQualifiersAtRuntime" value="true" />
+			<!-- 是否需要增加jdbcType 如：#installSize:DECIMAL# 默认为 #installSize# -->
+			<property name="jdbcType" value="true" />
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+		<table schema="${jdbc.schema}" tableName="${user.table.name1}" domainObjectName="${user.table.name1.alias}">
+			<!-- 去掉sqlmap中的schema， 在oracle中，如果配置了schema，此项一定要为true -->
+			<property name="ignoreQualifiersAtRuntime" value="true" />
+			<!-- 是否需要增加jdbcType 如：#installSize:DECIMAL# 默认为 #installSize# -->
+			<property name="jdbcType" value="true" />
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+		<table schema="${jdbc.schema}" tableName="${user.table.name2}" domainObjectName="${user.table.name2.alias}">
+			<!-- 去掉sqlmap中的schema， 在oracle中，如果配置了schema，此项一定要为true -->
+			<property name="ignoreQualifiersAtRuntime" value="true" />
+			<!-- 是否需要增加jdbcType 如：#installSize:DECIMAL# 默认为 #installSize# -->
+			<property name="jdbcType" value="true" />
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+		<table schema="${jdbc.schema}" tableName="${user.table.name3}" domainObjectName="${user.table.name3.alias}">
+			<!-- 去掉sqlmap中的schema， 在oracle中，如果配置了schema，此项一定要为true -->
+			<property name="ignoreQualifiersAtRuntime" value="true" />
+			<!-- 是否需要增加jdbcType 如：#installSize:DECIMAL# 默认为 #installSize# -->
+			<property name="jdbcType" value="true" />
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+		<table schema="${jdbc.schema}" tableName="${user.table.name4}" domainObjectName="${user.table.name4.alias}">
+			<!-- 去掉sqlmap中的schema， 在oracle中，如果配置了schema，此项一定要为true -->
+			<property name="ignoreQualifiersAtRuntime" value="true" />
+			<!-- 是否需要增加jdbcType 如：#installSize:DECIMAL# 默认为 #installSize# -->
+			<property name="jdbcType" value="true" />
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+		<table schema="${jdbc.schema}" tableName="${user.table.name5}" domainObjectName="${user.table.name5.alias}">
+			<!-- 去掉sqlmap中的schema， 在oracle中，如果配置了schema，此项一定要为true -->
+			<property name="ignoreQualifiersAtRuntime" value="true" />
+			<!-- 是否需要增加jdbcType 如：#installSize:DECIMAL# 默认为 #installSize# -->
+			<property name="jdbcType" value="true" />
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+		<table schema="${jdbc.schema}" tableName="${user.table.name6}" domainObjectName="${user.table.name6.alias}">
+			<!-- 去掉sqlmap中的schema， 在oracle中，如果配置了schema，此项一定要为true -->
+			<property name="ignoreQualifiersAtRuntime" value="true" />
+			<!-- 是否需要增加jdbcType 如：#installSize:DECIMAL# 默认为 #installSize# -->
+			<property name="jdbcType" value="true" />
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+		<table schema="${jdbc.schema}" tableName="${user.table.name7}" domainObjectName="${user.table.name7.alias}">
+			<!-- 去掉sqlmap中的schema， 在oracle中，如果配置了schema，此项一定要为true -->
+			<property name="ignoreQualifiersAtRuntime" value="true" />
+			<!-- 是否需要增加jdbcType 如：#installSize:DECIMAL# 默认为 #installSize# -->
+			<property name="jdbcType" value="true" />
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+		<table schema="${jdbc.schema}" tableName="${user.table.name8}" domainObjectName="${user.table.name8.alias}">
+			<!-- 去掉sqlmap中的schema， 在oracle中，如果配置了schema，此项一定要为true -->
+			<property name="ignoreQualifiersAtRuntime" value="true" />
+			<!-- 是否需要增加jdbcType 如：#installSize:DECIMAL# 默认为 #installSize# -->
+			<property name="jdbcType" value="true" />
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+		<table schema="${jdbc.schema}" tableName="${user.table.name9}" domainObjectName="${user.table.name9.alias}">
+			<!-- 去掉sqlmap中的schema， 在oracle中，如果配置了schema，此项一定要为true -->
+			<property name="ignoreQualifiersAtRuntime" value="true" />
+			<!-- 是否需要增加jdbcType 如：#installSize:DECIMAL# 默认为 #installSize# -->
+			<property name="jdbcType" value="true" />
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+		<table schema="${jdbc.schema}" tableName="${user.table.name10}" domainObjectName="${user.table.name10.alias}">
+			<!-- 去掉sqlmap中的schema， 在oracle中，如果配置了schema，此项一定要为true -->
+			<property name="ignoreQualifiersAtRuntime" value="true" />
+			<!-- 是否需要增加jdbcType 如：#installSize:DECIMAL# 默认为 #installSize# -->
+			<property name="jdbcType" value="true" />
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+
+	</context>
+</generatorConfiguration>
