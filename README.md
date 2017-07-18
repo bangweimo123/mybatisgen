@@ -7,7 +7,7 @@
 ---
 
 具体配置信息可以到以下地址查看
-[指南](https://wiki.sankuai.com/pages/viewpage.action?pageId=943938674)
+[指南](https://github.com/410115973/mybatisgen/wiki)
 
 3.包含功能
 ---
